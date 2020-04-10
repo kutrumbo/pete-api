@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: pete_api_production
-  username: pete_api
-  password: <%= ENV['PETE_API_DATABASE_PASSWORD'] %>
+  url:  <%= ENV["DATABASE_URL"] %>

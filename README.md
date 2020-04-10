@@ -1,24 +1,26 @@
-# README
+# pete-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An API to track personal activity
 
-Things you may want to cover:
+### Setup
 
-* Ruby version
+Requires Ruby 2.7.1 and Postgres 12.2
 
-* System dependencies
+To setup:
 
-* Configuration
+```
+rake db:setup
+```
 
-* Database creation
+And create a `.env` file using the following template:
 
-* Database initialization
+```
+STRAVA_CLIENT_ID=<CLIENT_ID>
+STRAVA_CLIENT_SECRET=<CLIENT_SECRET>
+```
 
-* How to run the test suite
+To run:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails s
+```

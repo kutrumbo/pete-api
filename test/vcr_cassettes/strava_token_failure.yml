@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.strava.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"code":"29c30c8f260ad9e95b2c5268a91598bfc1f5acd4","client_id":"42174","client_secret":"<CLIENT_SECRET>","grant_type":"authorization_code"}'
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Fri, 10 Apr 2020 20:43:11 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache
+      via:
+      - 1.1 linkerd
+      x-download-options:
+      - noopen
+      status:
+      - 400 Bad Request
+      x-request-id:
+      - efc25353-1741-4838-9ac8-f18164199ee7
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-frame-options:
+      - DENY
+      x-permitted-cross-domain-policies:
+      - none
+      x-content-type-options:
+      - nosniff
+      vary:
+      - Origin
+      x-xss-protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Bad Request","errors":[{"resource":"AuthorizationCode","field":"","code":"expired"}]}'
+    http_version: null
+  recorded_at: Fri, 10 Apr 2020 20:43:11 GMT
+recorded_with: VCR 5.1.0

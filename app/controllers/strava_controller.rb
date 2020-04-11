@@ -10,10 +10,11 @@ class StravaController < ApplicationController
       grant_type: 'authorization_code'
     }.to_json
     response = Faraday.post(url, token_request_body, 'Content-Type' => 'application/json')
+    json = JSON.parse(response.body)
     if response.success?
-      render status: :created
+      render json: { athlete_id: json['athlete']['id'] }, status: :ok
     else
-      render json: response.body, status: response.status
+      render json: json, status: response.status
     end
   end
 end

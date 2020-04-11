@@ -12,7 +12,15 @@ class StravaController < ApplicationController
     response = Faraday.post(url, token_request_body, 'Content-Type' => 'application/json')
     json = JSON.parse(response.body)
     if response.success?
-      render json: { athlete_id: json['athlete']['id'] }, status: :ok
+      athlete_id = json['athlete']['id']
+      user = User.find_or_initialize_by(athlete_id: athlete_id)
+      user.update!(
+        scope: json['token_type'], # TODO: need to get scope from original auth request
+        access_token: json['access_token'],
+        refresh_token: json['refresh_token'],
+        expires_at: json['expires_at'],
+      )
+      render json: { athlete_id: athlete_id }, status: :ok
     else
       render json: json, status: response.status
     end

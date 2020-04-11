@@ -1,37 +1,19 @@
-require 'faraday'
-
 class StravaController < ApplicationController
   def token
-    response = Faraday.post(url, token_request_body, 'Content-Type' => 'application/json')
-    json = JSON.parse(response.body)
+    response = StravaService.token_exchange(params.require(:code))
+    access_token = response[:access_token]
 
-    if response.success?
-      athlete_id = json['athlete']['id']
-      user = User.find_or_initialize_by(athlete_id: athlete_id)
+    if access_token
+      user = User.find_or_initialize_by(athlete_id: response[:athlete_id])
       user.update!(
-        scope: json['token_type'], # TODO: need to get scope from original auth request
-        access_token: json['access_token'],
-        refresh_token: json['refresh_token'],
-        expires_at: Time.at(json['expires_at']),
+        scope: response[:token_type], # TODO: need to get scope from original auth request
+        access_token: access_token,
+        refresh_token: response[:refresh_token],
+        expires_at: response[:expires_at],
       )
-      render json: { athlete_id: athlete_id }, status: :ok
+      render json: { access_token: access_token }, status: :ok
     else
-      render json: json, status: response.status
+      render json: response.slice(:errors), status: :bad_request
     end
-  end
-
-  private
-
-  def url
-    'https://www.strava.com/oauth/token'
-  end
-
-  def token_request_body
-    {
-      code: params.require(:code),
-      client_id: ENV['STRAVA_CLIENT_ID'],
-      client_secret: ENV['STRAVA_CLIENT_SECRET'],
-      grant_type: 'authorization_code'
-    }.to_json
   end
 end

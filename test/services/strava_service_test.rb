@@ -19,4 +19,20 @@ class StravaServiceTest < ActiveSupport::TestCase
     end
   end
 
+  test "token_refresh_success" do
+    VCR.use_cassette('strava_token_refresh_success') do
+      response = StravaService.refresh_token('1c00ee96528edfa1445c79228857731eb36018d9')
+      assert_equal(Time.at(1586669414), response[:expires_at])
+      assert_equal('8abc9d72ffff14743bd6ca8a00d4b3fa6117f0cc', response[:access_token])
+      assert_equal('1c00ee96528edfa1445c79228857731eb36018d9', response[:refresh_token])
+    end
+  end
+
+  test "token_refresh_fails" do
+    VCR.use_cassette('strava_token_refresh_failure') do
+      response = StravaService.refresh_token('8abc9d72ffff14743bd6ca8a00d4b3fa6117f0cc')
+      assert_equal([{"resource" => "RefreshToken", "field" => "refresh_token", "code" => "invalid"}], response[:errors])
+    end
+  end
+
 end

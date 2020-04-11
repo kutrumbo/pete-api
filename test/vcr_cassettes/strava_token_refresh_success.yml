@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.strava.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"refresh_token":"1c00ee96528edfa1445c79228857731eb36018d9","client_id":"42174","client_secret":"<CLIENT_SECRET>","grant_type":"refresh_token"}'
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sat, 11 Apr 2020 23:30:14 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - max-age=0, private, must-revalidate
+      via:
+      - 1.1 linkerd
+      x-download-options:
+      - noopen
+      status:
+      - 200 OK
+      x-request-id:
+      - 00aade36-e5bc-4c64-98c9-49427f1dffbb
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      etag:
+      - W/"e7e85880d9dec0e067748882c463285e"
+      x-frame-options:
+      - DENY
+      x-content-type-options:
+      - nosniff
+      x-permitted-cross-domain-policies:
+      - none
+      vary:
+      - Origin
+      x-xss-protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"8abc9d72ffff14743bd6ca8a00d4b3fa6117f0cc","expires_at":1586669414,"expires_in":21600,"refresh_token":"1c00ee96528edfa1445c79228857731eb36018d9"}'
+    http_version: null
+  recorded_at: Sat, 11 Apr 2020 23:30:14 GMT
+recorded_with: VCR 5.1.0

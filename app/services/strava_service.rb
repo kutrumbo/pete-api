@@ -22,7 +22,22 @@ module StravaService
   end
 
   def self.refresh_token(refresh_token)
+    token_request_body = {
+      refresh_token: refresh_token,
+      client_id: ENV['STRAVA_CLIENT_ID'],
+      client_secret: ENV['STRAVA_CLIENT_SECRET'],
+      grant_type: 'refresh_token'
+    }.to_json
 
+    response = Faraday.post(auth_url, token_request_body, 'Content-Type' => 'application/json')
+    json = JSON.parse(response.body)
+    HashWithIndifferentAccess.new(
+      token_type: json['token_type'],
+      access_token: json['access_token'],
+      refresh_token: json['refresh_token'],
+      expires_at: json['expires_at'] && Time.at(json['expires_at']),
+      errors: json['errors'],
+    )
   end
 
   private

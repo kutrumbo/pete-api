@@ -73,7 +73,6 @@ module StravaService
       event.update!(
         name: ACTIVITY_NAME_MAP[strava_event['type']],
         time: DateTime.parse(strava_event['start_date']),
-        date: Date.today, # remove once we remove field
         details: strava_event,
       )
     end

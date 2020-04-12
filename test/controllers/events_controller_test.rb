@@ -12,7 +12,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create event" do
     assert_difference('Event.count') do
-      post events_url, params: { event: { date: @event.date, name: @event.name } }, as: :json
+      post events_url, params: { event: build(:event).as_json }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update event" do
-    patch event_url(@event), params: { event: { date: @event.date, name: @event.name } }, as: :json
+    patch event_url(@event), params: { event: { name: @event.name } }, as: :json
     assert_response 200
   end
 

@@ -38,6 +38,12 @@ class StravaServiceTest < ActiveSupport::TestCase
   test "fetch_activities" do
     VCR.use_cassette('strava_fetch_activities') do
       response = StravaService.fetch_activities('9e7a98c6e5e2c9a5a5706f665eb825fa0866a6a3', 1586049499)
+      event = Event.order(:time).first
+      assert_equal('strava', event.source)
+      assert_equal(3260850976, event.source_id)
+      assert_equal('running', event.name)
+      assert_equal(DateTime.parse('2020-04-06T00:32:01Z'), event.time)
+      assert_equal(2929.0, event.details['distance'])
     end
   end
 

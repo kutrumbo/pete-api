@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athlete/activities?after=1586049499&page=1&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Authorization:
+      - Bearer 9e7a98c6e5e2c9a5a5706f665eb825fa0866a6a3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 12 Apr 2020 01:18:19 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - max-age=0, private, must-revalidate
+      via:
+      - 1.1 linkerd
+      x-download-options:
+      - noopen
+      status:
+      - 200 OK
+      x-ratelimit-limit:
+      - '600,30000'
+      x-request-id:
+      - b9b53984-e2b9-4d97-bfe0-bbedd2f6f712
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      etag:
+      - W/"61feb880ea855700aa93dfc0ec60678f"
+      x-frame-options:
+      - DENY
+      x-ratelimit-usage:
+      - '1,8'
+      x-content-type-options:
+      - nosniff
+      x-permitted-cross-domain-policies:
+      - none
+      strava-athlete-upload-version:
+      - 6721d24daa381a0adf0270833cbce022
+      vary:
+      - Origin
+      x-xss-protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"resource_state":2,"athlete":{"id":18159370,"resource_state":1},"name":"Afternoon
+        Run","distance":2929.0,"moving_time":955,"elapsed_time":971,"total_elevation_gain":6.8,"type":"Run","workout_type":0,"id":3260850976,"external_id":"C0186175-F663-4086-94DD-08E8F2BD1C35-activity.fit","upload_id":3485951709,"start_date":"2020-04-06T00:32:01Z","start_date_local":"2020-04-05T17:32:01Z","timezone":"(GMT-08:00)
+        America/Los_Angeles","utc_offset":-25200.0,"start_latlng":[34.009884,-118.482622],"end_latlng":[34.00453,-118.489025],"location_city":null,"location_state":null,"location_country":null,"start_latitude":34.009884,"start_longitude":-118.482622,"achievement_count":0,"kudos_count":0,"comment_count":0,"athlete_count":2,"photo_count":0,"map":{"id":"a3260850976","summary_polyline":"wpqnElcdrUMT?EBBEFL\\Vf@BRA\\BL?FCBBZLPBLLJDJLHK`@Cf@CD[TOZOJGFCJEDCF?HLJh@~@NNBF?Ff@j@BJ^h@NVBJDBFRHH@HLBHCFBf@bARVFPLVf@j@HVPTL^\\\\BJX^FPZXBVFPT\\b@XBFF@Nj@f@n@DNLFDNLBBDDN@FLT@FPJN@FCJ@HFBJJNN@ZE`@Mh@GXINMTGPOLIDINKRe@V[l@e@XK^s@VULEFG^i@p@a@`@a@JEX_@HENORIHKZM^EVOf@]RYPI\\[RKHCRULEJ?JG`@c@LE`@[^SPUNEb@i@b@_@DIRSBMPIJSLGFMRMJOBKh@Y@Ef@a@n@y@hBcBJ[TOPONABE@IG?[^APEFo@^MRGBGNUXAF[\\K@c@j@YLSVWPMT[VAJGBMVEBQVE@Y`@[LKLIBGJE?YXAFMJGB_@Bs@x@u@h@e@f@WP[LSPUZUHSb@MFIHIDG?MTWF_@X]@a@ROLIVoAr@e@l@y@h@IROBIDAF","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"visibility":"everyone","flagged":false,"gear_id":null,"from_accepted_tag":false,"upload_id_str":"3485951709","average_speed":3.067,"max_speed":4.9,"has_heartrate":false,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"elev_high":33.3,"elev_low":5.0,"pr_count":0,"total_photo_count":0,"has_kudoed":false},{"resource_state":2,"athlete":{"id":18159370,"resource_state":1},"name":"All
+        the Hits with Amy Ippoliti","distance":0.0,"moving_time":1800,"elapsed_time":1800,"total_elevation_gain":0,"type":"Yoga","id":3269240841,"external_id":null,"upload_id":null,"start_date":"2020-04-08T00:59:02Z","start_date_local":"2020-04-07T17:59:02Z","timezone":"(GMT-08:00)
+        America/Los_Angeles","utc_offset":-25200.0,"start_latlng":null,"end_latlng":null,"location_city":null,"location_state":null,"location_country":null,"start_latitude":null,"start_longitude":null,"achievement_count":0,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a3269240841","summary_polyline":null,"resource_state":2},"trainer":false,"commute":false,"manual":true,"private":false,"visibility":"everyone","flagged":false,"gear_id":null,"from_accepted_tag":null,"average_speed":0.0,"max_speed":0.0,"has_heartrate":false,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"pr_count":0,"total_photo_count":1,"has_kudoed":false},{"resource_state":2,"athlete":{"id":18159370,"resource_state":1},"name":"Afternoon
+        Run","distance":2763.9,"moving_time":940,"elapsed_time":950,"total_elevation_gain":3.0,"type":"Run","workout_type":0,"id":3273475547,"external_id":"D5F72101-F70D-4F78-9D4F-F447F9273E32-activity.fit","upload_id":3499426800,"start_date":"2020-04-08T23:21:42Z","start_date_local":"2020-04-08T16:21:42Z","timezone":"(GMT-08:00)
+        America/Los_Angeles","utc_offset":-25200.0,"start_latlng":[34.009954,-118.482671],"end_latlng":[34.003347,-118.487772],"location_city":null,"location_state":null,"location_country":null,"start_latitude":34.009954,"start_longitude":-118.482671,"achievement_count":0,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a3273475547","summary_polyline":"eqqnEvcdrUGHECGH?FRZL\\D^LTJn@EPBDh@r@@JKZ_@b@WPU\\?FML?LDFAV\\f@JFFNHFZh@NHHLHFVj@LNJZLNPXHFH?HJBRFBDJb@`@^x@TVHFVd@FTXZL\\LJFL\\`@?FHJJRNNHVJJJTTZRh@r@t@DJJ??FHNDXNVJLH@HHHBBDF@HMJAP?FBR?HDJ@VCl@ORBRCPSTc@JGPWBEAEBETMv@s@@GHCHKTKHGBGNULGTUBEH?PWFCFUBALURU`@M?EBENKLOPGHBHAHOB?b@[`AYLIv@u@HEREVS\\g@JENSVSDMHERYHCPOF?FEBQHIRGZ_@d@KJQLIFOPADGLIBIJIb@o@XWVg@VMXo@NKFKZSNEVMJMRMJSXQFOPO\\UF?MF_@h@WVKFO\\OD]Rc@b@OJe@h@KRKDi@n@Kd@c@XI@WZSFWf@SJUFOXOFKLCNEFG@KLO@OFWVSJe@b@OXIFIRIBU@_@ZIBIJG@GJYRIP[XIBG?]POBI?QDYNM@SLCA?AGB","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"visibility":"everyone","flagged":false,"gear_id":null,"from_accepted_tag":false,"upload_id_str":"3499426800","average_speed":2.94,"max_speed":3.9,"has_heartrate":false,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"elev_high":33.3,"elev_low":5.0,"pr_count":0,"total_photo_count":0,"has_kudoed":false},{"resource_state":2,"athlete":{"id":18159370,"resource_state":1},"name":"ABC''s
+        of Flow with Jo Tastula","distance":0.0,"moving_time":2700,"elapsed_time":2700,"total_elevation_gain":0,"type":"Yoga","id":3277735156,"external_id":null,"upload_id":null,"start_date":"2020-04-10T00:41:15Z","start_date_local":"2020-04-09T17:41:15Z","timezone":"(GMT-08:00)
+        America/Los_Angeles","utc_offset":-25200.0,"start_latlng":null,"end_latlng":null,"location_city":null,"location_state":null,"location_country":null,"start_latitude":null,"start_longitude":null,"achievement_count":0,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a3277735156","summary_polyline":null,"resource_state":2},"trainer":false,"commute":false,"manual":true,"private":false,"visibility":"everyone","flagged":false,"gear_id":null,"from_accepted_tag":null,"average_speed":0.0,"max_speed":0.0,"has_heartrate":false,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"pr_count":0,"total_photo_count":1,"has_kudoed":false},{"resource_state":2,"athlete":{"id":18159370,"resource_state":1},"name":"Afternoon
+        Run","distance":2969.6,"moving_time":931,"elapsed_time":942,"total_elevation_gain":6.5,"type":"Run","workout_type":0,"id":3282026399,"external_id":"D374FFEF-CFD8-40DF-82F0-E30626076ABF-activity.fit","upload_id":3508467309,"start_date":"2020-04-10T23:29:14Z","start_date_local":"2020-04-10T16:29:14Z","timezone":"(GMT-08:00)
+        America/Los_Angeles","utc_offset":-25200.0,"start_latlng":[34.01007,-118.482796],"end_latlng":[34.004643,-118.489087],"location_city":null,"location_state":null,"location_country":null,"start_latitude":34.01007,"start_longitude":-118.482796,"achievement_count":1,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a3282026399","summary_polyline":"}qqnEnddrUCDBCFBDXHNB^FH@PCH@DEFEP@FBDj@d@FNRR_@d@U`@[ZYTHFGFCFBXb@b@LREHHH`@ZNXTN`@n@HHBJ^j@HRLFJCLf@h@t@FPJNDBDJX`@PLFPZd@LXJHHVLLL`@RRDFBJJF@FV\\?FLPJVJHXl@LJJPRRJP@FA@@GB??DDF?Hb@j@FPJF`@FJHH@N?VEPIP@^INAJBXMTOACJIHOb@[FK@OFIN?FMr@g@H?LSLERSLEVg@d@o@DCBINOTKVYJELQ@GJKDCNBPEv@[LKb@QRCROH?t@_AVIZYFAF@FAJSVUXQDIRMhAgAXo@ROHM^WNWNANIX[VSJQ`@YN[DQNQp@aAHENQZKZU@EVQJUNKl@UDMECK@ONOVc@b@[`@SLe@f@YLSVEL[\\MRMFa@^QV_@VMPGDINYROHMPIB[b@_@^KNSNY\\KDSZM@[LOZQN?FQXE?u@j@i@h@GB_@L?BeALk@XU@UJGLGZHDCJKNQF]ZE@MH@DQDYNMNKDOTE@@BYd@MDSR]H","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"visibility":"everyone","flagged":false,"gear_id":null,"from_accepted_tag":false,"upload_id_str":"3508467309","average_speed":3.19,"max_speed":5.2,"has_heartrate":false,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"elev_high":33.0,"elev_low":5.1,"pr_count":0,"total_photo_count":0,"has_kudoed":false}]'
+    http_version: null
+  recorded_at: Sun, 12 Apr 2020 01:18:19 GMT
+recorded_with: VCR 5.1.0

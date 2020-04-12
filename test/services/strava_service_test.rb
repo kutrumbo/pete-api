@@ -35,4 +35,10 @@ class StravaServiceTest < ActiveSupport::TestCase
     end
   end
 
+  test "fetch_activities" do
+    VCR.use_cassette('strava_fetch_activities') do
+      response = StravaService.fetch_activities('9e7a98c6e5e2c9a5a5706f665eb825fa0866a6a3', 1586049499)
+    end
+  end
+
 end

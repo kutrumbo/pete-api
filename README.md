@@ -17,8 +17,9 @@ POSTGRES_PASSWORD=<POSTGRES_PASSWORD>
 The application is setup to be run using, so only requirement is to have `docker` and `docker-compose` installed:
 
 ```
+# start server and database containers
 docker-compose up -d
 
-# for initial setup and migrations
+# initial database setup and migrations
 docker-compose exec app bundle exec rake db:setup db:migrate
 ```

@@ -4,25 +4,21 @@ Uses [pete-client](https://github.com/kutrumbo/pete-client) as the client
 
 ## Getting started
 
-Requires Ruby 2.7.1 and Postgres 12.2
-
 Create a `.env` file using the following template:
 
 ```
 STRAVA_CLIENT_ID=<CLIENT_ID>
 STRAVA_CLIENT_SECRET=<CLIENT_SECRET>
-
+POSTGRES_USER=<POSTGRES_USER>
+POSTGRES_DB=<POSTGRES_DB>
+POSTGRES_PASSWORD=<POSTGRES_PASSWORD>
 ```
 
-Prepare the DB and start the application:
+The application is setup to be run using, so only requirement is to have `docker` and `docker-compose` installed:
 
 ```
-# Install dependencies
-bundle install
+docker-compose up -d
 
-# Setup DB
-rake db:setup
-
-# Start server
-rails s
+# for initial setup and migrations
+docker-compose exec app bundle exec rake db:setup db:migrate
 ```

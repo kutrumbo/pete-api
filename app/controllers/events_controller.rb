@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all
+    @events = Event.where('time > ?', params[:start_time]&.to_time || 1.year.ago)
 
     render json: @events
   end

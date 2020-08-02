@@ -23,6 +23,16 @@ services:
       - db_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
+  metabase:
+      image: metabase/metabase
+      restart: always
+      environment:
+        - MB_DB_FILE=/metabase-data/metabase.db
+      ports:
+        - "5000:3000"
+      volumes:
+        - metabase-data:/metabase-data
 volumes:
   gem_cache:
   db_data:
+  metabase-data:

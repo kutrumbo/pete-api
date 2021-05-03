@@ -5,6 +5,7 @@ module StravaService
   ACTIVITY_NAME_MAP = {
     'Yoga' => 'yoga',
     'Run' => 'running',
+    'Ride' => 'cycling',
   }.freeze
 
   def self.token_exchange(code)

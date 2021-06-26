@@ -24,6 +24,7 @@ RUN apk add --update --no-cache \
       pkgconfig \
       postgresql-dev \
       python3 \
+      shared-mime-info \
       tzdata
 
 RUN gem install bundler -v 2.1.4

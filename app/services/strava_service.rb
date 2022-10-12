@@ -6,6 +6,7 @@ module StravaService
     'Yoga' => 'yoga',
     'Run' => 'running',
     'Ride' => 'cycling',
+    'Swim' => 'swim',
   }.freeze
 
   def self.token_exchange(code)
